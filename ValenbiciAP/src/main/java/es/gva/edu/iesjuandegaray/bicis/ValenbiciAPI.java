@@ -3,9 +3,7 @@
  */
 package es.gva.edu.iesjuandegaray.bicis;
 
-/**
- * 
- */
+
 	import org.apache.http.HttpEntity;
 	import org.apache.http.HttpResponse;
 	import org.apache.http.client.methods.HttpGet;
@@ -17,8 +15,7 @@ package es.gva.edu.iesjuandegaray.bicis;
 	import java.io.IOException;
 	public class ValenbiciAPI {
 	private static final String API_URL =
-	"https://valencia.opendatasoft.com/api/explore/v2.1/catalog/datasets/valenbisi-
-	disponibilitat-valenbisi-dsiponibilidad/records?limit=20";
+	"https://valencia.opendatasoft.com/api/explore/v2.1/catalog/datasets/valenbisi-disponibilitat-valenbisi-dsiponibilidad/records?limit=20";
 	public static void main(String[] args) {
 	if (API_URL.isEmpty()) {
 	System.err.println("La URL de la API no está especificada.");
@@ -32,13 +29,13 @@ package es.gva.edu.iesjuandegaray.bicis;
 	String result = EntityUtils.toString(entity);
 	System.out.println("Respuesta de la API:");
 	System.out.println(result);
-	// Intentamos procesar la respuesta como JSON
+
 	try {
 	JSONObject jsonObject = new JSONObject(result);
 	JSONArray resultsArray = jsonObject.getJSONArray("results");
-	// Recorre el vector resultsArray mostrando los datos solicitados.
+
 	} catch (org.json.JSONException e) {
-	// Si la respuesta no es un array JSON, imprimimos el mensaje de error
+
 	System.err.println("Error al procesar los datos JSON: " + e.getMessage());
 	}
 	}
@@ -46,13 +43,9 @@ package es.gva.edu.iesjuandegaray.bicis;
 	e.printStackTrace();
 	}
 	}
-	}
+	
 
-	/**
-	 * @param args
-	 */
-		// TODO Auto-generated method stub
 
 	}
 
-}
+
